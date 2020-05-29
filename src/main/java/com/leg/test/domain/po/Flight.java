@@ -34,11 +34,15 @@ public class Flight implements Serializable {
     private String arr_actual;
     @Column(name = "FLIGHT_STATE")
     private String flight_state;
+    @Column(name = "PRICE")
+    private int price;
+    @Column(name = "DATE")
+    private String date;
 
     public Flight() {
     }
 
-    public Flight(String FLIGHT_NO, String DEP_CT, String DEP_CODE, String ARR_CT, String ARR_CODE, String DEP_TERMINAL, String ARR_TERMINAL, String DEP_SCHEDULED, String ARR_SCHEDULED, String DEP_ACTUAL, String ARR_ACTUAL, String FLIGHT_STATE) {
+    public Flight(String FLIGHT_NO, String DEP_CT, String DEP_CODE, String ARR_CT, String ARR_CODE, String DEP_TERMINAL, String ARR_TERMINAL, String DEP_SCHEDULED, String ARR_SCHEDULED, String DEP_ACTUAL, String ARR_ACTUAL, String FLIGHT_STATE, int price, String date) {
         this.flightno = FLIGHT_NO;
         this.dep_ct = DEP_CT;
         this.dep_code = DEP_CODE;
@@ -51,6 +55,8 @@ public class Flight implements Serializable {
         this.dep_actual = DEP_ACTUAL;
         this.arr_actual = ARR_ACTUAL;
         this.flight_state = FLIGHT_STATE;
+        this.price = price;
+        this.date = date;
     }
 
     public String getFlightno() {
@@ -151,21 +157,40 @@ public class Flight implements Serializable {
         this.flight_state = flight_state;
     }
 
+    public int getPrice() {
+        return price;
+    }
+
+    public void setPrice(int price) {
+        this.price = price;
+    }
+
+    public String getDate() {
+        return date;
+    }
+
+    public void setDate(String date) {
+        this.date = date;
+    }
+
+
     @Override
     public String toString() {
         return "Flight{" +
-                "flight_no='" + flightno + '\'' +
+                "flightno='" + flightno + '\'' +
                 ", dep_ct='" + dep_ct + '\'' +
                 ", dep_code='" + dep_code + '\'' +
                 ", arr_ct='" + arr_ct + '\'' +
                 ", arr_code='" + arr_code + '\'' +
                 ", dep_terminal='" + dep_terminal + '\'' +
                 ", arr_terminal='" + arr_terminal + '\'' +
-                ", dep_scheduled='" + depscheduled + '\'' +
+                ", depscheduled='" + depscheduled + '\'' +
                 ", arr_scheduled='" + arr_scheduled + '\'' +
                 ", dep_actual='" + dep_actual + '\'' +
                 ", arr_actual='" + arr_actual + '\'' +
                 ", flight_state='" + flight_state + '\'' +
+                ", price=" + price +
+                ", date='" + date + '\'' +
                 '}';
     }
 }

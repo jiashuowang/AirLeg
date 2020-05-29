@@ -8,4 +8,5 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface FlightQueryDao extends JpaRepository<Flight, String> {
     Flight findByFlightnoAndDepscheduled(String FLIGHT_NO,String DEP_SCHEDULED);
+    Flight findByFlightnoAndDate(String flight_no, String date);
 }

@@ -15,8 +15,7 @@ public class FlightQueryServiceImpl implements FlightQueryService {
     private FlightQueryDao flightQueryDao;
 
     @Override
-    public Flight findByFLIGHT_NOAndDEP_SCHEDULED(String FLIGHT_NO,String DEP_SCHEDULED){
-        Flight flight =flightQueryDao.findByFlightnoAndDepscheduled(FLIGHT_NO,DEP_SCHEDULED);
-        return flight;
+    public Flight findByFlight_noAndDate(String FLIGHT_NO, String date) {
+        return flightQueryDao.findByFlightnoAndDate(FLIGHT_NO, date);
     }
 }

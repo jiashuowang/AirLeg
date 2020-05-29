@@ -16,7 +16,7 @@ public class FlightController {
 
     @RequestMapping(value = "/FlightQuery/{flightNo}/{flightDate}", method = RequestMethod.GET)
     @ResponseBody //返回user的json字符串
-    public Flight findByFLIGHT_NOAndDEP_SCHEDULED(@PathVariable("flightNo") String flightNo, @PathVariable("flightDate")String flightDate) {
-        return flightQueryService.findByFLIGHT_NOAndDEP_SCHEDULED(flightNo, flightDate);
+    public Flight findByFlight_noAndDate(@PathVariable("flightNo") String flightNo, @PathVariable("flightDate")String flightDate) {
+        return flightQueryService.findByFlight_noAndDate(flightNo, flightDate);
     }
 }
